@@ -1,0 +1,21 @@
+{
+  "name": "my-first-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test:dev": "npm run test -- --watch",
+    "test": "PORT=3001 ./node_modules/mocha/bin/mocha spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "puppeteer": "^1.12.1"
+  }
+}
