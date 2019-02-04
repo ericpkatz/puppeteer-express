@@ -25,7 +25,7 @@ describe('my favorite app', ()=> {
     await page.waitForSelector('button');
     //let html = await page.$eval('h1', el=> el.innerHTML);
     //expect(html).to.equal('Hello World!');
-    await page.click('button');
+    await page.click('#my-button');
     html = await page.$eval('h1', el=> el.innerHTML);
     expect(html).to.equal('HELLO WORLD!');
     await page.close();
