@@ -22,9 +22,9 @@ describe('my favorite app', ()=> {
     await page.waitForSelector('button');
     //let html = await page.$eval('h1', el=> el.innerHTML);
     //expect(html).to.equal('Hello World!');
-    page.click('button');
-    //html = await page.$eval('h1', el=> el.innerHTML);
-    //expect(html).to.equal('HELLO WORLD!');
+    await page.click('button');
+    html = await page.$eval('h1', el=> el.innerHTML);
+    expect(html).to.equal('HELLO WORLD!');
     await browser.close();
 
   });
