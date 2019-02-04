@@ -9,6 +9,7 @@ after(async()=> await server.close());
 
 describe('my favorite app', ()=> {
   it('works', async()=> {
+    console.log(puppeteer);
     const browser = await puppeteer.launch({
     // will greatly affect the results
     headless: true,
@@ -18,8 +19,11 @@ describe('my favorite app', ()=> {
     const page = await browser.newPage();
     await page.goto(`http://localhost:${process.env.PORT}`);
     await page.waitForSelector('h1');
-    const html = await page.$eval('h1', el=> el.innerHTML);
-    expect(html).to.equal('Hello World');
+    let html = await page.$eval('h1', el=> el.innerHTML);
+    expect(html).to.equal('Hello World!');
+    await page.click('button');
+    html = await page.$eval('h1', el=> el.innerHTML);
+    expect(html).to.equal('HELLO WORLD!');
     await browser.close();
 
   });
