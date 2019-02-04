@@ -18,9 +18,10 @@ beforeEach(async()=> {
     page = await browser.newPage();
 
 });
+
 afterEach(async()=> {
   await page.close();
-  browser.close();
+  await browser.close();
 });
 
 describe('my favorite app', ()=> {
