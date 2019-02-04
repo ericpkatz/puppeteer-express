@@ -19,7 +19,7 @@ describe('my favorite app', ()=> {
     await page.goto(`http://localhost:${process.env.PORT}`);
     await page.waitForSelector('h1');
     const html = await page.$eval('h1', el=> el.innerHTML);
-    expect(html).to.equal('Hello World!');
+    expect(html).to.equal('Hello World');
     await browser.close();
 
   });
