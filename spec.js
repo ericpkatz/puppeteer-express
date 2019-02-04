@@ -2,14 +2,17 @@ const { expect } = require('chai');
 const puppeteer = require('puppeteer');
 const app = require('./app');
 let server;
+
+/*
 before(async()=> {
   server = await app.listen(process.env.PORT);
 });
 after(async()=> await server.close()); 
+*/
 
 describe('my favorite app', ()=> {
   it('works', async()=> {
-    console.log(puppeteer);
+    const server = await app.listen(process.env.PORT);
     const browser = await puppeteer.launch({
     // will greatly affect the results
     headless: true,
@@ -25,7 +28,8 @@ describe('my favorite app', ()=> {
     await page.click('button');
     html = await page.$eval('h1', el=> el.innerHTML);
     expect(html).to.equal('HELLO WORLD!');
-    //await browser.close();
+    await browser.close();
+    await server.close()
 
   });
 });
