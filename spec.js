@@ -19,11 +19,12 @@ describe('my favorite app', ()=> {
     const page = await browser.newPage();
     await page.goto(`http://localhost:${process.env.PORT}`);
     await page.waitForSelector('h1');
-    let html = await page.$eval('h1', el=> el.innerHTML);
-    expect(html).to.equal('Hello World!');
+    await page.waitForSelector('button');
+    //let html = await page.$eval('h1', el=> el.innerHTML);
+    //expect(html).to.equal('Hello World!');
     await page.click('button');
-    html = await page.$eval('h1', el=> el.innerHTML);
-    expect(html).to.equal('HELLO WORLD!');
+    //html = await page.$eval('h1', el=> el.innerHTML);
+    //expect(html).to.equal('HELLO WORLD!');
     await browser.close();
 
   });
