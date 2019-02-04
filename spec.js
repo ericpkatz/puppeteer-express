@@ -12,7 +12,7 @@ after(async()=> await server.close());
 beforeEach(async()=> {
     browser = await puppeteer.launch({
       headless: true,
-      args: ['--disable-dev-shm-usage', '--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--disable-dev-shm-usage'],
     });
     page = await browser.newPage();
 
