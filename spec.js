@@ -16,12 +16,10 @@ describe('my favorite app', ()=> {
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
     const page = await browser.newPage();
-    /*
     await page.goto(`http://localhost:${process.env.PORT}`);
     await page.waitForSelector('h1');
     const html = await page.$eval('h1', el=> el.innerHTML);
     expect(html).to.equal('Hello World!');
-    */
     await browser.close();
 
   });
